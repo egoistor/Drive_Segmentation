@@ -61,7 +61,7 @@ class DRIVE_Dataset(Dataset):
         # plt.show()
 
         mode = random.choice([-1, 0, 1])
-        image = self.augment(image, mode)
+        # image = self.augment(image, mode)
         image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
         #label = self.augment(label, mode)
 
