@@ -10,11 +10,13 @@ import torch
 import os
 import cv2
 from unet_model.unet import UNET
+from unet_model.Attention_UNet import *
 import re
 os.environ["KMP_DUPLICATE_LIB_OK"]="TRUE"
 if __name__ == "__main__":
     device = torch.device('cuda:0')
-    net = UNET(n_channels=1,n_classes=1)
+    # net = UNET(n_channels=1,n_classes=1)
+    net = R2U_Net(img_ch=1,output_ch=1)
     net = net.to(device)
     net.load_state_dict(torch.load('best_model.pth'))
     net.eval()

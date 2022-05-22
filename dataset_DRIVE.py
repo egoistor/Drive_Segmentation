@@ -32,8 +32,8 @@ class DRIVE_Dataset(Dataset):
         """
         if mode == -1:
             image = random_gamma_correction(image)
-        if mode == 1:
-            image = random_vessel_augmentation(image)
+        # if mode == 1:
+        #     image = random_vessel_augmentation(image)
         return image
 
     def __len__(self):
@@ -61,7 +61,7 @@ class DRIVE_Dataset(Dataset):
         # plt.show()
 
         mode = random.choice([-1, 0, 1])
-        # image = self.augment(image, mode)
+        image = self.augment(image, mode)
         image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
         #label = self.augment(label, mode)
 

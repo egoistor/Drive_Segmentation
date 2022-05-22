@@ -56,6 +56,8 @@ class upsample(nn.Module):
         :param x2: encoder feature
         :return:
         """
+        # import pdb
+        # pdb.set_trace()
         x1 = self.upsample(x1)
 
         diff_y = torch.tensor([x2.size()[2] - x1.size()[2]])
@@ -98,6 +100,8 @@ class UNET(nn.Module):
         self.upsample4 = upsample(128,64,bilinear)
         self.outconv = output_conv(64,n_classes)
     def forward(self,x):
+        # import pdb
+        # pdb.set_trace()
         x1 = self.init(x)
         x2 = self.downsample1(x1)
         x3 = self.downsample2(x2)
