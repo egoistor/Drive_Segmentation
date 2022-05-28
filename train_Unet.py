@@ -28,7 +28,7 @@ def train_net(net,device,data_path,epochs=300,batch_size=2,lr=1e-5):
             optimizer.zero_grad()
 
             images = images.to(device,dtype = torch.float32)
-            print(images.shape)
+            # print(images.shape)
             labels = labels.to(device,dtype=torch.float32)
             pred = net(images)
 
